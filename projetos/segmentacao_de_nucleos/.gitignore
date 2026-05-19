@@ -37,9 +37,9 @@ env.bak/
 venv.bak/
 
 # Datasets
-raw/
-processed/
-interim/
+data/raw/
+data/processed/
+data/interim/
 
 # Trained models
 *.pth
