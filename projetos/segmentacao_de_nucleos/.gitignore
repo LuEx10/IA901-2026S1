@@ -37,14 +37,9 @@ env.bak/
 venv.bak/
 
 # Datasets
-.npy
-.xml
-.png 
-.jpg
-.tif
-MoNuSeg/
-NuInSeg/
-PanNuke/
+raw/
+processed/
+interim/
 
 # Trained models
 *.pth
