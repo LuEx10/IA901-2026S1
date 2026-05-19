@@ -1,5 +1,5 @@
 # Segmentação de núcleos em imagens histológicas com deep learning: comparação entre arquiteturas e datasets
-# `<Project Title in in English>`
+# Nuclei segmentation in histological images using deep learning: A comparison between architectures and datasets
 
 ## Apresentação
 
@@ -23,9 +23,9 @@ oferecida no primeiro semestre de 2026, na Unicamp, sob supervisão da Profa. Dr
 
 Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
-PanNuke | https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/ | Breve resumo (duas ou três linhas) sobre a base.
-NuInsSeg | https://www.kaggle.com/datasets/ipateam/nuinsseg | Breve resumo (duas ou três linhas) sobre a base.
-MoNuSeg | https://monuseg.grand-challenge.org/Data/ | Breve resumo (duas ou três linhas) sobre a base.
+PanNuke | https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/ | Grande dataset com 7904 amostras de imagens histológicas de diferentes tecidos, além de máscaras de segmentação e anotaçãoe sobre a histologia. Este dataset se destaca pela quantidade e diversidade nas amostras.
+NuInsSeg | https://www.kaggle.com/datasets/ipateam/nuinsseg | Dataset com 665 amostras de imagens histológicas anotadas, desenvolvido com foco em treinar e avaliar modelos de segmentação de núcleos celulares em imagens de microscopia.
+MoNuSeg | https://monuseg.grand-challenge.org/Data/ | Dataset com 44 imagens histopatológicas de diversos órgãos em alta resolução com anotações feitas manualmente por especialistas. Criado originalmente para uma competição, se tornou um benchmark frequentemente usado em pesquisas de patologia digital.
 
 > Forneça também o link para o "datasheet" criado para os datasets (anexado na pasta `data`, como indicado nas [instruções E2](https://github.com/Disciplinas-FEEC/IA901-2026S1/blob/main/templates/ia901-E2-instructions.md)), contendo informações mais detalhadas e sistematizadas sobre as bases de dados.
 
@@ -48,6 +48,8 @@ MoNuSeg | https://monuseg.grand-challenge.org/Data/ | Breve resumo (duas ou trê
 
 ## Uso de IA Generativa
 > Adicione aqui em quais tarefas foi usada alguma ferramenta de IA Generativa. Para cada tarefa indicada detalhe qual a ferramenta e qual o prompt utilizado.
+- Implementação de script para geração de samples: O Claude foi utilizado para gerar um script base de geração da pasta '*\data\samples'. Foram feitas diversas adaptações em cima desse script base, para que essa geração se adequasse ao projeto.
+    - Prompt Utilizado: "baseado no notebook (00_installation.ipynb), implemente um script que gere samples para os dados dos datasets"
 
 ## Referências
 > Seção obrigatória. Inclua aqui referências utilizadas no projeto.
