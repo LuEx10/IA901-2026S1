@@ -86,9 +86,9 @@ Essa etapa do projeto consistiu na criação de sua estrutura e testes iniciais 
 Passo | Descrição | Período de realização
 ---- | ---- | ----
 Inclusão de métricas            | Estudar mais a fundo e incluir no projeto métricas de avaliação de borda, como a Distância de Hausdorff Média ou a Distância de Superfície Simétrica, com o objetvo de complementar o DICE (métrica de sobreposição). | Semana 1
-Refinamento do treinamento      | Refinar o treinamento e ajustar hiperparâmetros à partir da análise das métricas de avaliação | Semanas 2 e 3
+Refinamento do treinamento      | Refinar o treinamento e ajustar hiperparâmetros utilizando métodos de otimização, além da análise das métricas de avaliação | Semanas 2 e 3
 Testes em diferentes datasets   | Realizar testes dos modelos com dados de bases não introduzidas em seu treinamento (utilizando o MoNuSeg como conjunto de teste de um modelo treinado e validado no PanNuke por exemplo) | Semanas 2 e 3
-Análise final                   | Análisar os resultados finais para preparar a entraga final | Semana 4
+Análise final                   | Análisar os resultados finais para preparar a entrega final | Semana 4
 Organização para a entrega      | Organizar dados sobre o desenvolvimento e execução do projeto no formato esperado para a entrega final | Semana 4
 
 
