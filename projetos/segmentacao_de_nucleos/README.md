@@ -96,7 +96,7 @@ Com as redes treinadas em cada dataset, obteve-se, nos respectivos conjuntos de 
 | --- | --- | --- | --- |
 | **MoNuSeg** | $0.75 \pm 0.10$ | $0.77 \pm 0.09$ | $0.79 \pm 0.07$ |
 | **PanNuke** | $0.81 \pm 0.18$ | $0.82 \pm 0.18$ | $0.80 \pm 0.18$ |
-| **NuInSeg** | $0.74 \pm 0.22$ | $0.77 \pm 0.22$ | $0.73 \pm $ |
+| **NuInSeg** | $0.74 \pm 0.22$ | $0.77 \pm 0.22$ | $0.73 \pm 0.22$ |
 
 ## Próximos passos
 Essa etapa do projeto consistiu na criação de sua estrutura e testes iniciais das ferramentas e datasets utilizados. Para a conclusão do projeto, os próximos passos focam na melhoria do treinamento, além de testes com aplicação mais focada em seu objetivo inicial.
