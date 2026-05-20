@@ -19,7 +19,7 @@ A segmentação de núcleos celulares em imagens histológicas é uma tarefa imp
 
 Nesse contexto, o presente projeto busca investigar o comportamento de arquiteturas de segmentação quando aplicadas a datasets histológicos com características distintas. A proposta procura se aproximar de um problema mais realista de adaptação de domínio, avaliando como diferentes modelos se comportam em situações de transferência entre bases de dados.
 
-Para isso, serão utilizados três datasets públicos amplamente utilizados na literatura: MoNuSeg, PanNuke e NuInsSeg. Inicialmente, pretende-se realizar experimentos de treinamento e teste entre diferentes bases, analisando qualitativamente e quantitativamente os resultados obtidos. Posteriormente, também serão exploradas estratégias relacionadas a fine-tuning e adaptação de domínio.
+Para isso, serão utilizados três datasets públicos amplamente utilizados na literatura: MoNuSeg², NuInsSeg³ e PanNuke⁴. Inicialmente, pretende-se realizar experimentos de treinamento e teste entre diferentes bases, analisando qualitativamente e quantitativamente os resultados obtidos. Posteriormente, também serão exploradas estratégias relacionadas a fine-tuning e adaptação de domínio.
 
 ## Metodologia
 
@@ -29,7 +29,7 @@ O projeto está sendo desenvolvido seguindo um pipeline dividido em etapas de:
 
 - **pré-processamento**, responsável pela padronização dos dados provenientes dos diferentes datasets. Essa etapa inclui carregamento das imagens histológicas, conversão e organização das máscaras de segmentação, leitura de arquivos XML, além da visualização das amostras para utilização posterior no treinamento das redes neurais;
 
-- **treinamento**, onde os experimentos de segmentação serão realizados utilizando arquiteturas de deep learning voltadas para imagens médicas, incluindo modelos baseados em U-Net e suas variantes;
+- **treinamento**, onde os experimentos de segmentação serão realizados utilizando arquiteturas de deep learning voltadas para imagens médicas, usando as arquiteturas UNet, AttentionUNet e UNETR;
 
 - **teste**, onde o modelo treinado será aplicado a um conjunto de dados ainda não visto;
 
@@ -43,7 +43,7 @@ PanNuke | https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/ | Grande dataset
 NuInsSeg | https://www.kaggle.com/datasets/ipateam/nuinsseg | Dataset com 665 amostras de imagens histológicas anotadas, desenvolvido com foco em treinar e avaliar modelos de segmentação de núcleos celulares em imagens de microscopia.
 MoNuSeg | https://monuseg.grand-challenge.org/Data/ | Dataset com 44 imagens histopatológicas de diversos órgãos em alta resolução com anotações feitas manualmente por especialistas. Criado originalmente para uma competição, se tornou um benchmark frequentemente usado em pesquisas de patologia digital.
 
-O detalhamento sobre os datasets utilizados pode ser encontrado no [datasheet desenvolvido pelo grupo](data/Datasheets.md).
+O detalhamento sobre os datasets utilizados pode ser encontrado no [datasheet](data/Datasheets.md) desenvolvido pelo grupo.
 
 ## Ferramentas
 
