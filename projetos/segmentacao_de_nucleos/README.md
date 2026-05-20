@@ -19,7 +19,7 @@ A segmentação de núcleos celulares em imagens histológicas é uma tarefa imp
 
 Nesse contexto, o presente projeto busca investigar o comportamento de arquiteturas de segmentação quando aplicadas a datasets histológicos com características distintas. A proposta procura se aproximar de um problema mais realista de adaptação de domínio, avaliando como diferentes modelos se comportam em situações de transferência entre bases de dados.
 
-Para isso, serão utilizados três datasets públicos amplamente utilizados na literatura: MoNuSeg², NuInsSeg³ e PanNuke⁴. Inicialmente, pretende-se realizar experimentos de treinamento e teste entre diferentes bases, analisando qualitativamente e quantitativamente os resultados obtidos. Posteriormente, também serão exploradas estratégias relacionadas a fine-tuning e adaptação de domínio.
+Para isso, serão utilizados três datasets públicos amplamente utilizados na literatura: MoNuSeg, PanNuke e NuInsSeg. Inicialmente, pretende-se realizar experimentos de treinamento e teste entre diferentes bases, analisando qualitativamente e quantitativamente os resultados obtidos. Posteriormente, também serão exploradas estratégias relacionadas a fine-tuning e adaptação de domínio.
 
 ## Metodologia
 
@@ -29,7 +29,7 @@ O projeto está sendo desenvolvido seguindo um pipeline dividido em etapas de:
 
 - **pré-processamento**, responsável pela padronização dos dados provenientes dos diferentes datasets. Essa etapa inclui carregamento das imagens histológicas, conversão e organização das máscaras de segmentação, leitura de arquivos XML, além da visualização das amostras para utilização posterior no treinamento das redes neurais;
 
-- **treinamento**, onde os experimentos de segmentação serão realizados utilizando arquiteturas de deep learning voltadas para imagens médicas, usando as arquiteturas UNet, AttentionUNet e UNETR;
+- **treinamento**, onde os experimentos de segmentação serão realizados utilizando arquiteturas de deep learning voltadas para imagens médicas, incluindo modelos baseados em U-Net e suas variantes;
 
 - **teste**, onde o modelo treinado será aplicado a um conjunto de dados ainda não visto;
 
@@ -43,7 +43,7 @@ PanNuke | https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/ | Grande dataset
 NuInsSeg | https://www.kaggle.com/datasets/ipateam/nuinsseg | Dataset com 665 amostras de imagens histológicas anotadas, desenvolvido com foco em treinar e avaliar modelos de segmentação de núcleos celulares em imagens de microscopia.
 MoNuSeg | https://monuseg.grand-challenge.org/Data/ | Dataset com 44 imagens histopatológicas de diversos órgãos em alta resolução com anotações feitas manualmente por especialistas. Criado originalmente para uma competição, se tornou um benchmark frequentemente usado em pesquisas de patologia digital.
 
-O detalhamento sobre os datasets utilizados pode ser encontrado no [datasheet](data/Datasheets.md) desenvolvido pelo grupo.
+O detalhamento sobre os datasets utilizados pode ser encontrado no [datasheet desenvolvido pelo grupo](data/Datasheets.md).
 
 ## Ferramentas
 
@@ -75,6 +75,20 @@ O workflow atual do projeto segue a estrutura ilustrada abaixo:
 
 ![Workflow do projeto](assets/WorkflowE2.png)
 
+## Experimentos e Resultados preliminares
+
+Para cada dataset, realizou-se o treinamento de três tipos de redes neurais: UNET, AttentionUnet e UNETR, disponíveis no pacote Python MONAI. Os conjunto de treino, validação e teste foram divididos seguindo uma proporção de 70%, 15% e 15%, respectivamente. 
+
+#### Transformações aplicadas as imagens e máscaras
+De forma geral, aplicou-se transformações de Normalização de intensidade e rotações aleatórias nas imagens do conjunto de treino.
+
+#### Treinamento
+Aplicou-se os mesmos hiperparâmetros para todos os tipos de redes utilizados, independente do dataset escolhido:
+- Otimizador: ADAM
+- Learning Rate: $10^{-4}$
+- Batch Size: 16
+- Número de épocas: 50
+
 #### Resultados preliminares
 Com as redes treinadas em cada dataset, obteve-se, nos respectivos conjuntos de teste, os seguintes DICES médios:
 
@@ -82,7 +96,7 @@ Com as redes treinadas em cada dataset, obteve-se, nos respectivos conjuntos de 
 | --- | --- | --- | --- |
 | **MoNuSeg** | $0.75 \pm 0.10$ | $0.77 \pm 0.09$ | $0.79 \pm 0.07$ |
 | **PanNuke** | $0.81 \pm 0.18$ | $0.82 \pm 0.18$ | $0.80 \pm 0.18$ |
-| **NuInSeg** | $0.74 \pm 0.22$ | $0.77 \pm 0.22$ | $0.73 \pm 0.22$ |
+| **NuInSeg** | $0.74 \pm 0.22$ | $0.77 \pm 0.22$ | $0.73 \pm $ |
 
 ## Próximos passos
 Essa etapa do projeto consistiu na criação de sua estrutura e testes iniciais das ferramentas e datasets utilizados. Para a conclusão do projeto, os próximos passos focam na melhoria do treinamento, além de testes com aplicação mais focada em seu objetivo inicial.
@@ -90,9 +104,9 @@ Essa etapa do projeto consistiu na criação de sua estrutura e testes iniciais 
 Passo | Descrição | Período de realização
 ---- | ---- | ----
 Inclusão de métricas            | Estudar mais a fundo e incluir no projeto métricas de avaliação de borda, como a Distância de Hausdorff Média ou a Distância de Superfície Simétrica, com o objetvo de complementar o DICE (métrica de sobreposição). | Semana 1
-Refinamento do treinamento      | Refinar o treinamento e ajustar hiperparâmetros utilizando métodos de otimização, além da análise das métricas de avaliação | Semanas 2 e 3
+Refinamento do treinamento      | Refinar o treinamento e ajustar hiperparâmetros à partir da análise das métricas de avaliação | Semanas 2 e 3
 Testes em diferentes datasets   | Realizar testes dos modelos com dados de bases não introduzidas em seu treinamento (utilizando o MoNuSeg como conjunto de teste de um modelo treinado e validado no PanNuke por exemplo) | Semanas 2 e 3
-Análise final                   | Análisar os resultados finais para preparar a entrega final | Semana 4
+Análise final                   | Análisar os resultados finais para preparar a entraga final | Semana 4
 Organização para a entrega      | Organizar dados sobre o desenvolvimento e execução do projeto no formato esperado para a entrega final | Semana 4
 
 
