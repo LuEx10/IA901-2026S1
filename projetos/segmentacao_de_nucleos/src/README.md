@@ -41,3 +41,7 @@ Datasets/
 
 ---
 *Nota: O download de grandes volumes de dados pode levar algum tempo dependendo da conexão com a internet.*
+
+## Samples
+
+Esse diretório também contém o notebook `Sample_Generator`, utilizado para selecionar o subconjunto ilustrativo de amostras que foi carregado ao repositório do github.  
