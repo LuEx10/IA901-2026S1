@@ -81,7 +81,16 @@ O workflow atual do projeto segue a estrutura ilustrada abaixo:
 > Aponte os problemas encontrados nas soluções testadas até aqui.
 
 ## Próximos passos
-> Liste as próximas etapas planejadas para conclusão do projeto, com uma estimativa de tempo para cada etapa.
+Essa etapa do projeto consistiu na criação de sua estrutura e testes iniciais das ferramentas e datasets utilizados. Para a conclusão do projeto, os próximos passos focam na melhoria do treinamento, além de testes com aplicação mais focada em seu objetivo inicial.
+
+Passo | Descrição | Período de realização
+---- | ---- | ----
+Inclusão de métricas            | Estudar mais a fundo e incluir no projeto métricas de avaliação de borda, como a Distância de Hausdorff Média ou a Distância de Superfície Simétrica, com o objetvo de complementar o DICE (métrica de sobreposição). | Semana 1
+Refinamento do treinamento      | Refinar o treinamento e ajustar hiperparâmetros à partir da análise das métricas de avaliação | Semanas 2 e 3
+Testes em diferentes datasets   | Realizar testes dos modelos com dados de bases não introduzidas em seu treinamento (utilizando o MoNuSeg como conjunto de teste de um modelo treinado e validado no PanNuke por exemplo) | Semanas 2 e 3
+Análise final                   | Análisar os resultados finais para preparar a entraga final | Semana 4
+Organização para a entrega      | Organizar dados sobre o desenvolvimento e execução do projeto no formato esperado para a entrega final | Semana 4
+
 
 ## Uso de IA Generativa
 - Implementação de script para geração de samples: O Claude foi utilizado para gerar um script base de geração da pasta '*\data\samples'. Foram feitas diversas adaptações em cima desse script base, para que essa geração se adequasse ao projeto.
