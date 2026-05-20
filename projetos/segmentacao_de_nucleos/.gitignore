@@ -40,6 +40,6 @@ venv.bak/
 data/raw/
 data/processed/
 data/interim/
-
+notebooks/results/
 # Trained models
 *.pth
